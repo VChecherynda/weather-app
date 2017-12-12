@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {bindActionCreators} from 'react';
 import {connect} from 'react-redux';
 
 class Content extends Component {
   render() {
+    console.log(this.props.data);
     return (
       <main className="main">
         <div className="card cardTemplate weather-forecast" hidden>
-          <div className="city-key" hidden></div>
+          <div className="city-key" hidden>{this.props.data.key}</div>
           <div className="card-last-updated" hidden></div>
-          <div className="location"></div>
-          <div className="date"></div>
+          <div className="location">{this.props.data.label}</div>
+          <div className="date">{this.props.data.created}</div>
           <div className="description"></div>
           <div className="current">
             <div className="visual">

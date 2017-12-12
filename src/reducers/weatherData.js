@@ -1,6 +1,5 @@
 export default function() {
-  return [
-    {
+  return {
       key: '2459115',
       label: 'New York, NY',
       created: '2016-07-22T01:00:00Z',
@@ -34,5 +33,5 @@ export default function() {
         direction: 195
       }
     }
-  }]
+  }
 }
