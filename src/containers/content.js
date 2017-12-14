@@ -1,38 +1,40 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import Future from './future';
+
 class Content extends Component {
   render() {
-    console.log(this.props.data);
+    const futureForecast = this.props.data.channel.item.forecast;
+    console.log(futureForecast);
     return (
       <main className="main">
-        <div className="card cardTemplate weather-forecast" hidden>
-          <div className="city-key" hidden>{this.props.data.key}</div>
-          <div className="card-last-updated" hidden></div>
+        <div className="card weather-forecast">
+          <div className="city-key" hidden="true">{this.props.data.key}</div>
+          <div className="card-last-updated" hidden="">{this.props.data.created}</div>
           <div className="location">{this.props.data.label}</div>
-          <div className="date">{this.props.data.created}</div>
-          <div className="description"></div>
+          <div className="date"></div>
+          <div className="description">{this.props.data.channel.item.condition.text}</div>
           <div className="current">
             <div className="visual">
-              <div className="icon"></div>
+              <div className="icon windy"></div>
               <div className="temperature">
-                <span className="value"></span>
-                <span className="scale">°F</span>
+                <span className="value">{this.props.data.channel.item.condition.temp}</span><span className="scale">°F</span>
               </div>
             </div>
             <div className="description">
-              <div className="humidity"></div>
+              <div className="humidity">{this.props.data.channel.atmosphere.humidity}%</div>
               <div className="wind">
-                <span className="value"></span>
-                <span className="scale"></span>
-                <span className="direction"></span>
+                <span className="value">25</span>
+                <span className="scale">mph</span>
+                <span className="direction">195</span>°
               </div>
-              <div className="sunrise"></div>
-              <div className="sunset"></div>
+              <div className="sunrise">5:43 am</div>
+              <div className="sunset">8:21 pm</div>
             </div>
           </div>
-          <div className="future"></div>
-        </div>
+          <Future />
+        </div>  
       </main>
     );
   }
