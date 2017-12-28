@@ -5,12 +5,12 @@ class Future extends Component {
 		console.log(this.props)
 		return (
 			<div className="future">
-			{/* {
+			{
 				this.props.futureForecast.map(function(day, i) {
 					return (
 						<div key={i} className="oneday">
 							<div className="date"></div>
-							<div className="icon partly-cloudy-day">{this.props.futureDayOfTheWeek[i]}</div>
+							{/* <div className="icon partly-cloudy-day">{this.props.futureDayOfTheWeek[i].bind(this)}</div> */}
 							<div className="temp-high">
 								<span className="value">{day.high}</span>°
 							</div>
@@ -20,7 +20,7 @@ class Future extends Component {
 						</div>
 					);
 				})
-			} */}
+			}
 			</div>
 		)
 	}

@@ -11,12 +11,10 @@ class DaysOfTheWeek extends Component {
 			return dayOfTheWeek[(i + today) % 7]
 		});
 
-		console.log(futureForecast);
-
 		return (
 			<Future 
-			  futureForecast={this.futureForecast}
-				futureDayOfTheWeek={this.futureDayOfTheWeek}/>
+			  futureForecast={futureForecast}
+				futureDayOfTheWeek={futureDayOfTheWeek}/>
 		)
 	}
 }
