@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class Future extends Component {
   render() {
-		console.log(this.props)
+		const days = this.props.futureDayOfTheWeek;
 		return (
 			<div className="future">
 			{
@@ -10,7 +10,7 @@ class Future extends Component {
 					return (
 						<div key={i} className="oneday">
 							<div className="date"></div>
-							{/* <div className="icon partly-cloudy-day">{this.props.futureDayOfTheWeek[i].bind(this)}</div> */}
+							<div className="icon partly-cloudy-day">{days[i]}</div>
 							<div className="temp-high">
 								<span className="value">{day.high}</span>°
 							</div>
