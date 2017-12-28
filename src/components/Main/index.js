@@ -1,12 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
 
-import Future from './future';
-
-class Content extends Component {
+class Main extends Component {
   render() {
-    const futureForecast = this.props.data.channel.item.forecast;
-    console.log(futureForecast);
     return (
       <main className="main">
         <div className="card weather-forecast">
@@ -33,17 +28,10 @@ class Content extends Component {
               <div className="sunset">8:21 pm</div>
             </div>
           </div>
-          <Future />
-        </div>  
+        </div>
       </main>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    data: state.weatherData
-  };
-}
-
-export default connect(mapStateToProps)(Content);
+export default Main;

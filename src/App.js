@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import Header from './components/header';
-import Main from './components/main';
-import Loader from './components/loader';
-import Dialog from './components/dialog';
+import Header from './components/Header';
+import Main from './containers/main';
+import Days from './containers/daysOfTheWeek';
+import Loader from './components/Loader';
+import Dialog from './components/Dialog';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Main />
+        <Days />
         <Loader />
         <Dialog />
       </div>
