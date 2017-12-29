@@ -1,0 +1,7 @@
+.future {
+    display: flex;
+}
+
+.oneday {
+    flex-grow: 1;
+}

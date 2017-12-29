@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Future from '../components/Future'
+import Future from '../components/Future';
 
 class DaysOfTheWeek extends Component {
 	render() {

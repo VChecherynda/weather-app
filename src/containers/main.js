@@ -19,4 +19,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Main );
+export default connect(mapStateToProps)(Main);

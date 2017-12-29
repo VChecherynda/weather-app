@@ -3,11 +3,15 @@ import './style.css'
 
 class Header extends Component {
   render() {
+    const { dialogHandler } = this.props;
+
     return (
       <header className="header">
-        <h1 className="header__title">Weather PWA</h1>
-        <button id="butRefresh" className="headerButton">Refresh</button>
-        <button id="butAdd" className="headerButton">Add</button>
+        <h1 className="headerTitle">Weather PWA</h1>
+        <div className="headerBtnWrap">
+          <button id="butRefresh"  className="headerButton">Refresh</button>
+          <button id="butAdd" onClick={() => dialogHandler()} className="headerButton">Add</button>
+        </div>
       </header>
     )
   }
