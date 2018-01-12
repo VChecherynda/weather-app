@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './containers/header';
-import Main from './containers/main';
-import Days from './containers/daysOfTheWeek';
+import ListItems from './containers/listItems';
 import Loader from './components/Loader';
 import Dialog from './containers/dialog';
 
@@ -13,12 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <main className="main">
-          <div className="card weather-forecast">
-            <Main />
-            <Days />
-          </div>
-        </main>
+        <ListItems />
         <Loader />
         <Dialog />
       </div>
