@@ -4,11 +4,14 @@ import './style.css';
 class Dialog extends Component {
   render() {
     const { isOpen } = this.props;
+    const { dialogHandlerClose } = this.props;
+
+    console.log(isOpen);
 
     return (
       <div>
         {isOpen &&
-          <div class="dialog-container dialog-container">
+          <div class="dialog-container">
             <div class="dialog">
               <div class="dialog-title">Add new city</div>
               <div class="dialog-body">
@@ -24,7 +27,7 @@ class Dialog extends Component {
               </div>
               <div class="dialog-buttons">
                 <button id="butAddCity" class="button">Add</button>
-                <button id="butAddCancel" class="button">Cancel</button>
+                <button id="butAddCancel" onClick={() => dialogHandlerClose()} class="button">Cancel</button>
               </div>
             </div>
           </div>

@@ -14,7 +14,8 @@ class DaysOfTheWeek extends Component {
 		return (
 			<Future 
 			  futureForecast={futureForecast}
-				futureDayOfTheWeek={futureDayOfTheWeek}/>
+				futureDayOfTheWeek={futureDayOfTheWeek}
+			/>
 		)
 	}
 }

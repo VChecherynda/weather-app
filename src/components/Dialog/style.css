@@ -1,0 +1,42 @@
+.dialog-container {
+    background: rgba(0, 0, 0, 0.57);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    will-change: opacity;
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+}
+
+.dialog {
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);
+    min-width: 280px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateY(30px);
+    transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+}
+
+.dialog > div {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.dialog-title {
+    padding-top: 20px;
+    font-size: 1.25em;
+}
+
+.dialog-body {
+    padding-top: 20px;
+    padding-bottom: 24px;
+}
+
+.dialog-buttons {
+    padding: 8px !important;
+    float: right;
+}
