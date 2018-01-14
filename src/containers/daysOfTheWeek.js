@@ -22,7 +22,7 @@ class DaysOfTheWeek extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.weatherData
+    data: state.weatherData1
   };
 }
 

@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
-import WeatherData from './weatherData';
+import { data1,data2 } from './weatherData';
 import PopUpData from './popUp';
 
 const allReducers = combineReducers({
-  weatherData: WeatherData,
+  weatherData1: data1,
+  weatherData2: data2,
   popUpData: PopUpData
 });
 

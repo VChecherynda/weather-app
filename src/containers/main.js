@@ -14,8 +14,9 @@ class Content extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state.weatherData)
   return {
-    data: state.weatherData
+    data: state.weatherData1
   };
 }
 
