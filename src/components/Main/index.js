@@ -3,22 +3,24 @@ import './style.css';
 
 class Main extends Component {
   render() {
+    const card = this.props.data.byHash[1];
+    console.log(card);
     return (
       <div>
-        <div className="city-key" hidden="true">{this.props.data.key}</div>
-        <div className="card-last-updated" hidden="">{this.props.data.created}</div>
-        <div className="location">{this.props.data.label}</div>
+        <div className="city-key" hidden="true">{card.key}</div>
+        <div className="card-last-updated" hidden="">{card.created}</div>
+        <div className="location">{card.label}</div>
         <div className="date"></div>
-        <div className="description">{this.props.data.channel.item.condition.text}</div>
+        <div className="description">{card.channel.item.condition.text}</div>
         <div className="current">
           <div className="visual">
             <div className="icon windy"></div>
             <div className="temperature">
-              <span className="value">{this.props.data.channel.item.condition.temp}</span><span className="scale">°F</span>
+              <span className="value">{card.channel.item.condition.temp}</span><span className="scale">°F</span>
             </div>
           </div>
           <div className="description">
-            <div className="humidity">{this.props.data.channel.atmosphere.humidity}%</div>
+            <div className="humidity">{card.channel.atmosphere.humidity}%</div>
             <div className="wind">
               <span className="value">25</span>
               <span className="scale">mph</span>

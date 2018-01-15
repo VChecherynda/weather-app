@@ -4,7 +4,7 @@ import Future from '../components/Future';
 
 class DaysOfTheWeek extends Component {
 	render() {
-		const futureForecast = this.props.data.channel.item.forecast;		
+		const futureForecast = this.props.data.byHash[1].channel.item.forecast;		
 		const dayOfTheWeek = ['Sun','Mon','Tue','Wed','Thu','Fr','St'];
 		const today = 4;		
 		const futureDayOfTheWeek = dayOfTheWeek.map(function(day, i){
@@ -22,7 +22,7 @@ class DaysOfTheWeek extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.weatherData1
+    data: state.weatherData
   };
 }
 
