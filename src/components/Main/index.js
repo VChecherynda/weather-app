@@ -3,6 +3,7 @@ import './style.css';
 
 class Main extends Component {
   render() {
+    console.log(this.props);
     const card = this.props.data.byHash[this.props.num];
     return (
       <div>

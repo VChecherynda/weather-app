@@ -4,7 +4,7 @@ import Main from '../components/Main';
 
 function mapStateToProps(state) {
   return {
-    data: state.weatherData,
+    data: state.addWeatherCard,
   };
 }
 

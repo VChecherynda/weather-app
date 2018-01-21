@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { weatherData } from './weatherData';
+import { weatherData,addWeatherCard } from './weatherData';
 import PopUpData from './popUp';
 
 const allReducers = combineReducers({
-  weatherData: weatherData,
-  popUpData: PopUpData
+  popUpData: PopUpData,
+  addWeatherCard: addWeatherCard,
 });
 
 export default allReducers;

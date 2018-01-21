@@ -26,7 +26,7 @@ class ListItems extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.weatherData
+    data: state.addWeatherCard
   };
 }
 
