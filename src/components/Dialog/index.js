@@ -3,18 +3,17 @@ import './style.css';
 
 class Dialog extends Component {
   render() {
-    const { isOpen } = this.props;
-    const { dialogHandlerClose } = this.props;
+    const { isOpen, addAnotherCity, dialogHandlerClose } = this.props;
 
     console.log(isOpen);
 
     return (
       <div>
         {isOpen &&
-          <div class="dialog-container">
-            <div class="dialog">
-              <div class="dialog-title">Add new city</div>
-              <div class="dialog-body">
+          <div className="dialog-container">
+            <div className="dialog">
+              <div className="dialog-title">Add new city</div>
+              <div className="dialog-body">
                 <select id="selectCityToAdd">
                   <option value="2357536">Austin, TX</option>
                   <option value="2367105">Boston, MA</option>
@@ -25,9 +24,9 @@ class Dialog extends Component {
                   <option value="2490383">Seattle, WA</option>
                 </select>
               </div>
-              <div class="dialog-buttons">
-                <button id="butAddCity" class="button">Add</button>
-                <button id="butAddCancel" onClick={() => dialogHandlerClose()} class="button">Cancel</button>
+              <div className="dialog-buttons">
+                <button id="butAddCity"  onClick={() => addAnotherCity()} className="button">Add</button>
+                <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
               </div>
             </div>
           </div>

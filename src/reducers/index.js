@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import { weatherData } from './weatherData';
 import PopUpData from './popUp';
 

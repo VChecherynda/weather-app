@@ -3,8 +3,7 @@ import './style.css';
 
 class Main extends Component {
   render() {
-    const card = this.props.data.byHash[1];
-    console.log(card);
+    const card = this.props.data.byHash[this.props.num];
     return (
       <div>
         <div className="city-key" hidden="true">{card.key}</div>
@@ -24,7 +23,7 @@ class Main extends Component {
             <div className="wind">
               <span className="value">25</span>
               <span className="scale">mph</span>
-              <span className="direction">195</span>°
+              <span className="direction">195°</span>
             </div>
             <div className="sunrise">5:43 am</div>
             <div className="sunset">8:21 pm</div>

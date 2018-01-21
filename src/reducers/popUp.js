@@ -1,5 +1,5 @@
 const initialState = {
-  isOpen: false
+  isOpen: false,
 }
 
 export default function popUp(state = initialState, action) {
@@ -14,5 +14,4 @@ export default function popUp(state = initialState, action) {
     default:
       return state;
   }
-
 }
