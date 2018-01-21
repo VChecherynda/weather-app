@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addAnotherCity: () => dispatch(AddWeatherCard()),
+    addAnotherCity: (e) => dispatch(AddWeatherCard(e)),
     dialogHandlerClose: () => dispatch(CloseDialogWindow())
   }
 }

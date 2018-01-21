@@ -76,10 +76,12 @@ const weatherData = {
 
 export function addWeatherCard(state = weatherData, action) {
   
+  const newArr = [...weatherData.byId,action.payload];
+  console.log(newArr);
+
   switch (action.type) {
     case 'ADD_CARD':
-      return { ...state, byId: action.payload }
-
+      return { ...state, byId: newArr }
     default:
       return state;
   }
