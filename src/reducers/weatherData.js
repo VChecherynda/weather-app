@@ -1,87 +1,23 @@
-const weatherData = {
-  byId: [1],
-  byHash: {
-    '1': {
-      key: '2459115',
-      label: 'New York, NY',
-      created: '2016-07-22T01:00:00Z',
-      channel: {
-        astronomy: {
-          sunrise: "5:43 am",
-          sunset: "8:21 pm"
-        },
-        item: {
-          condition: {
-            text: "Windy",
-            date: "Thu, 21 Jul 2016 09:00 PM EDT",
-            temp: 56,
-            code: 24
-          },
-          forecast: [
-            {code: 44, high: 86, low: 70},
-            {code: 44, high: 94, low: 73},
-            {code: 4, high: 95, low: 78},
-            {code: 24, high: 75, low: 89},
-            {code: 24, high: 89, low: 77},
-            {code: 44, high: 92, low: 79},
-            {code: 44, high: 89, low: 77}
-          ]
-        },
-        atmosphere: {
-          humidity: 56
-        },
-        wind: {
-          speed: 25,
-          direction: 195
-        }
-      }
-    },
-    '2': {
-      key: '3959115',
-      label: 'Chicago, IL',
-      created: '2016-07-22T01:00:00Z',
-      channel: {
-        astronomy: {
-          sunrise: "5:43 am",
-          sunset: "8:21 pm"
-        },
-        item: {
-          condition: {
-            text: "Windy",
-            date: "Thu, 21 Jul 2016 09:00 PM EDT",
-            temp: 56,
-            code: 24
-          },
-          forecast: [
-            {code: 44, high: 86, low: 70},
-            {code: 44, high: 94, low: 73},
-            {code: 4, high: 95, low: 78},
-            {code: 24, high: 75, low: 89},
-            {code: 24, high: 89, low: 77},
-            {code: 44, high: 92, low: 79},
-            {code: 44, high: 89, low: 77}
-          ]
-        },
-        atmosphere: {
-          humidity: 56
-        },
-        wind: {
-          speed: 25,
-          direction: 195
-        }
-      }
-    },
-  }
+function weatherData(city) {
+  const url = `https://query.yahooapis.com/v1/public/yql?q=select wind, item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='${city}')&format=json`
+  fetch(url)
+    .then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      console.log('parsed json', JSON.stringify(json))
+      const state = JSON.stringify(json);
+      return state;
+    }).catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
 }
 
-export function addWeatherCard(state = weatherData, action) {
+export function addWeatherCard(state=null, action, city='chicago') {
   
-  const newArr = [...weatherData.byId,action.payload];
-  console.log(newArr);
-
   switch (action.type) {
     case 'ADD_CARD':
-      return { ...state, byId: newArr }
+      weatherData(city) 
+      return {...state }
     default:
       return state;
   }

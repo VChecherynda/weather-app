@@ -12,9 +12,9 @@ export function CloseDialogWindow() {
   }
 }
 
-export function AddWeatherCard(e) {
+export function AddCityCard() {
   return {
     type: 'ADD_CARD',
-    payload: [e],
+    payload: '',
   }
 }

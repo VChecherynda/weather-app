@@ -16,7 +16,7 @@ class Dialog extends Component {
   }
 
   render() {
-    const { isOpen, addAnotherCity, dialogHandlerClose } = this.props;
+    const { isOpen, addCityCard, dialogHandlerClose } = this.props;
 
     return (
       <div>
@@ -36,7 +36,7 @@ class Dialog extends Component {
                 </select>
               </div>
               <div className="dialog-buttons">
-                <button id="butAddCity"  onClick={() => addAnotherCity(this.state.selectValue)} className="button">Add</button>
+                <button id="butAddCity"  onClick={() => addCityCard(this.state.selectValue)} className="button">Add</button>
                 <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
               </div>
             </div>

@@ -6,20 +6,14 @@ import Days from './daysOfTheWeek';;
 
 class ListItems extends Component {
   render() {
-    const cards = this.props.data.byId;
-    const ListItems = cards.map(function(el) {
-      return (
-        <main className="main" key={el}>
-          <div className="card weather-forecast">
-            <Main num={el}/>
-            <Days />
-          </div>
-        </main>
-      )
-    })
-
+    console.log(this.props);
     return (
-      ListItems
+      <main className="main">
+        <div className="card weather-forecast">
+          {/* <Main /> */}
+          {/* <Days /> */}
+        </div>
+      </main>
     )
   }
 }

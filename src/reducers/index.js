@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { weatherData,addWeatherCard } from './weatherData';
+import { addWeatherCard } from './weatherData';
 import PopUpData from './popUp';
 
 const allReducers = combineReducers({
