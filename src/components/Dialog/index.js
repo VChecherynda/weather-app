@@ -6,8 +6,23 @@ class Dialog extends Component {
     super(props);
     this.state = {
       selectValue: null,
+      isOpen: true,
     }
   }
+
+  // componentDidMount() {
+  //   const firstCity = document.getElementById('selectCityToAdd').options[0].value;
+  //   console.log('DidMount', firstCity);
+  //   this.setState({
+  //     isOpen: false,
+  //     selectValue: firstCity,
+  //   });
+  // }
+
+  onClickAddCity = () => {
+    console.log('=======',this.state.selectValue,'=======');
+    const data = this.props.getWeatherData(this.state.selectValue);
+ }
 
   onChangeCity = (e) => {
     this.setState({
@@ -20,28 +35,26 @@ class Dialog extends Component {
 
     return (
       <div>
-        {isOpen &&
-          <div className="dialog-container">
-            <div className="dialog">
-              <div className="dialog-title">Add new city</div>
-              <div className="dialog-body">
-                <select id="selectCityToAdd" onChange={this.onChangeCity}>
-                  <option value="1">Austin, TX</option>
-                  <option value="2">Boston, MA</option>
-                  <option value="2">Chicago, IL</option>
-                  <option value="2">New York, NY</option>
-                  <option value="2">Portland, OR</option>
-                  <option value="2">San Francisco, CA</option>
-                  <option value="2">Seattle, WA</option>
-                </select>
-              </div>
-              <div className="dialog-buttons">
-                <button id="butAddCity"  onClick={() => addCityCard(this.state.selectValue)} className="button">Add</button>
-                <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
-              </div>
+        <div className="dialog-container">
+          <div className="dialog">
+            <div className="dialog-title">Add new city</div>
+            <div className="dialog-body">
+              <select id="selectCityToAdd" onChange={this.onChangeCity}>
+                <option value="Austin">Austin, TX</option>
+                <option value="Boston">Boston, MA</option>
+                <option value="Chicago">Chicago, IL</option>
+                <option value="New York">New York, NY</option>
+                <option value="Portland">Portland, OR</option>
+                <option value="San Francisco">San Francisco, CA</option>
+                <option value="Seattle">Seattle, WA</option>
+              </select>
+            </div>
+            <div className="dialog-buttons">
+              <button id="butAddCity" onClick={() => this.onClickAddCity()} className="button">Add</button>
+              <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
             </div>
           </div>
-        }
+        </div>
       </div>
     )
   }

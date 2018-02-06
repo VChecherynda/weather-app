@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import { AddCityCard, CloseDialogWindow } from '../actions';
+import getWeatherData from '../fetchers/weather';
 
 import Dialog from '../components/Dialog';
 
 function mapStateToProps(state) {
   return {
-    isOpen: state.popUpData.isOpen
+    getWeatherData: getWeatherData,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     addCityCard: (e) => dispatch(AddCityCard(e)),
-    dialogHandlerClose: () => dispatch(CloseDialogWindow())
   }
 }
 
