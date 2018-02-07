@@ -12,9 +12,9 @@ export function CloseDialogWindow() {
   }
 }
 
-export function AddCityCard() {
+export function addCityCard(city) {
   return {
     type: 'ADD_CARD',
-    payload: '',
+    payload: city,
   }
 }
