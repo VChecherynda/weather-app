@@ -5,8 +5,9 @@ import getWeatherData from '../fetchers/weather';
 import Dialog from '../components/Dialog';
 
 function mapStateToProps(state) {
+  console.log('====>',state)
   return {
-    getWeatherData: getWeatherData,
+    isOpen: state.modal,
   }
 }
 
