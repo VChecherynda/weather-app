@@ -7,13 +7,14 @@ import Dialog from '../components/Dialog';
 function mapStateToProps(state) {
   console.log('====>',state)
   return {
-    isOpen: state.modal,
+    isOpen: state.modal.isOpen,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     addCityCard: (e) => dispatch(AddCityCard(e)),
+    dialogHandlerClose: () => dispatch(CloseDialogWindow())
   }
 }
 

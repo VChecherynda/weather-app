@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 function mapDispatchToProps(dispatch) {
   return {
-    dialogHandler: () => dispatch(OpenDialogWindow())
+    dialogHandlerOpen: () => dispatch(OpenDialogWindow())
   }
 }
 

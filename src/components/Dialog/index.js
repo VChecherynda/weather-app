@@ -7,7 +7,6 @@ class Dialog extends Component {
     super(props);
     this.state = {
       selectValue: null,
-      isOpen: props.isOpen,
     }
   }
 
@@ -20,15 +19,9 @@ class Dialog extends Component {
   //   });
   // }
 
-  onClickAddCity = () => {
-    const data = this.props.getWeatherData(this.state.selectValue);
-  }
-
-  dialogModalClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  }
+  // onClickAddCity = () => {
+  //   const data = this.props.getWeatherData(this.state.selectValue);
+  // }
 
   onChangeCity = (e) => {
     this.setState({
@@ -41,8 +34,8 @@ class Dialog extends Component {
     const { isOpen, addCityCard, dialogHandlerClose } = this.props;
 
     return (
-      <div> 
-      {!isOpen &&
+      <div>
+      {isOpen &&
           <div className="dialog-container">
             <div className="dialog">
               <div className="dialog-title">Add new city</div>
@@ -58,8 +51,8 @@ class Dialog extends Component {
                 </select>
               </div>
               <div className="dialog-buttons">
-                <button id="butAddCity" onClick={this.onClickAddCity()} className="button">Add</button>
-                <button id="butAddCancel" onClick={this.dialogModalClose()} className="button">Cancel</button>
+                <button id="butAddCity" className="button">Add</button>
+                <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
               </div>
             </div>
           </div>
