@@ -1,35 +1,18 @@
 import { call, put, all, takeEvery } from 'redux-saga/effects'
-import axios from 'axios'
-
-
-// function weatherData(city) {
-//   const url = `https://api.apixu.com/v1/current.json?key=a2358c89b18042bb8e090543180802&q=${city}`
-//   return fetch(url)
-//     .then(function(res) {
-//       const response = res.json();
-//       return response
-//     })
-//     .then(function(json) {
-//       console.log(json);
-//       const state = JSON.parse(json);
-//       return json;
-//     })
-//     .catch(function(ex) {
-//       console.log('parsing failed', ex)
-//     })
-// }
 
 function weatherData(city) {
-    const url = `https://api.apixu.com/v1/current.json?key=a2358c89b18042bb8e090543180802&q=${city}`
-    return axios.get(url)
-      .then(function(res) {
-        console.log(res);
-        // const response = res.json();
-        return res.data
-      })
-      .catch(function(ex) {
-        console.log('parsing failed', ex)
-      })
+  const url = `https://api.apixu.com/v1/current.json?key=a2358c89b18042bb8e090543180802&q=${city}`
+  return fetch(url)
+    .then(function(res) {
+      const response = res.json();
+      return response
+    })
+    .then(function(json) {
+      return json;
+    })
+    .catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
 }
 
 function* addCardWithData(action) {
