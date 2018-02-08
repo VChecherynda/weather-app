@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './style.css';
 
-const list = [
+const listOfCities = [
   { value: 'Austin', label: 'Austin, TX'},
-
+  { value: 'Boston', label: 'Boston, MA'},
+  { value: 'Chicago', label: 'Chicago, IL'},
+  { value: 'New York', label: 'New York, NY'},
+  { value: 'Portland', label: 'Portland, OR'},
+  { value: 'San Francisco', label: 'San Francisco, CA'},
   { value: 'Seattle', label: 'Seattle, WA'}
 ];
 
@@ -11,21 +15,9 @@ class Dialog extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selectValue: list[0].value,
+      selectValue: listOfCities[0].value,
     }
   }
-
-  // componentDidMount() {
-  //   const firstCity = document.getElementById('selectCityToAdd');
-  //   console.log('DidMount', firstCity);
-  //   this.setState({
-  //     selectValue: firstCity,
-  //   });
-  // }
-
-  // onClickAddCity = () => {
-  //   const data = this.props.getWeatherCity(this.state.selectValue);
-  // }
 
   onChangeCity = (e) =>  {
     this.setState({
@@ -44,15 +36,8 @@ class Dialog extends Component {
               <div className="dialog-title">Add new city</div>
               <div className="dialog-body">
                 <select id="selectCityToAdd" onChange={this.onChangeCity}>
-                  {/*<option value="Austin">Austin, TX</option>
-                  <option value="Boston">Boston, MA</option>
-                  <option value="Chicago">Chicago, IL</option>
-                  <option value="New York">New York, NY</option>
-                  <option value="Portland">Portland, OR</option>
-                  <option value="San Francisco">San Francisco, CA</option>
-                  <option value="Seattle">Seattle, WA</option>*/}
-                  {list.map(el => (
-                    <option value={el.value}>{el.label}</option>
+                  {listOfCities.map((el,index) => (
+                    <option value={el.value} key={index}>{el.label}</option>
                   ))}
                 </select>
               </div>
