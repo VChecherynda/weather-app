@@ -14,7 +14,9 @@ function mapDispatchToProps(dispatch) {
     getWeatherAtCity: (city) => {
       dispatch(addCityCard(city))
     },
-    dialogHandlerClose: () => dispatch(CloseDialogWindow())
+    dialogHandlerClose: () => {
+      dispatch(CloseDialogWindow())
+    }
   }
 }
 

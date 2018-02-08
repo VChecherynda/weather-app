@@ -50,7 +50,7 @@ class Dialog extends Component {
                   <option value="New York">New York, NY</option>
                   <option value="Portland">Portland, OR</option>
                   <option value="San Francisco">San Francisco, CA</option>
-        <option value="Seattle">Seattle, WA</option>*/}
+                  <option value="Seattle">Seattle, WA</option>*/}
                   {list.map(el => (
                     <option value={el.value}>{el.label}</option>
                   ))}
