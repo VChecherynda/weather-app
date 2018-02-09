@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 
 const listOfCities = [
-  { value: 'Austin', label: 'Austin, TX'},
   { value: 'Boston', label: 'Boston, MA'},
+  { value: 'Austin', label: 'Austin, TX'},
   { value: 'Chicago', label: 'Chicago, IL'},
   { value: 'New York', label: 'New York, NY'},
   { value: 'Portland', label: 'Portland, OR'},
@@ -17,6 +17,10 @@ class Dialog extends Component {
     this.state = {
       selectValue: listOfCities[0].value,
     }
+  }
+
+  componentDidMount() {
+    this.props.getWeatherAtCity(this.state.selectValue);
   }
 
   onChangeCity = (e) =>  {
@@ -42,8 +46,20 @@ class Dialog extends Component {
                 </select>
               </div>
               <div className="dialog-buttons">
-                <button id="butAddCity" onClick={() => getWeatherAtCity(this.state.selectValue)} className="button">Add</button>
-                <button id="butAddCancel" onClick={() => dialogHandlerClose()} className="button">Cancel</button>
+                <button
+                  id="butAddCity"
+                  onClick={() => getWeatherAtCity(this.state.selectValue)}
+                  className="button"
+                >
+                  Add
+                </button>
+                <button
+                  id="butAddCancel"
+                  onClick={() => dialogHandlerClose()}
+                  className="button"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>

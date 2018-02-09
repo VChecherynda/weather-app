@@ -25,18 +25,12 @@ function* addCardWithData(action) {
   }
 }
 
-function* initialDataSaga(action) {
-  const weather = yield call(weatherData, 'chicago');
-  yield put({type: 'ADD_INITIAL_DATA', payload: weather })
-}
-
 function* watchDataAdd() {
   yield takeEvery('ADD_CARD', addCardWithData)
 }
 
 export function* rootSaga(getState) {
   yield all([
-    call(initialDataSaga),
     call(watchDataAdd)
   ])
 }
