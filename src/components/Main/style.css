@@ -13,3 +13,7 @@
     margin: 0;
     flex-grow: 1;
 }
+
+.wind span {
+    display: block;
+}

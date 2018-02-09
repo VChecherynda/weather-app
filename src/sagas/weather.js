@@ -8,6 +8,7 @@ function weatherData(city) {
       return response
     })
     .then(function(json) {
+      console.log(JSON.stringify(json, null, 3))
       return json;
     })
     .catch(function(ex) {

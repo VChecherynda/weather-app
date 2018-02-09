@@ -23,34 +23,29 @@ class Main extends Component {
   }
 
   render() {
-    console.log('main component ====>', this.props);
     const card = this.props.data;
-    console.log(this.state);
 
     return (
       <div>
         {this.state.doneLoading && <div>
-          <div className="city-key" hidden="true">Lorem</div>
-            <div className="card-last-updated" hidden="">Lorem</div>
-            <div className="location">{this.props.data.location.name}</div>
-            <div className="date"></div>
-            <div className="description">Lorem</div>
+          <div className="city-key" hidden="true"></div>
+            <div className="location">{card.location.name}</div>
+            <div className="card-last-updated" hidden="">{card.current.last_updated}</div>
             <div className="current">
             <div className="visual">
-              <div className="icon windy"></div>
+              <div className="icon">
+                <img src={card.current.condition.icon} />
+              </div>
               <div className="temperature">
-                <span className="value">Lorem</span><span className="scale">°F</span>
+                <span className="value">{card.current.temp_c}</span><span className="scale">°C</span>
               </div>
             </div>
             <div className="description">
-              <div className="humidity">Lorem%</div>
+              <div className="humidity">{card.current.humidity}%</div>
               <div className="wind">
-                <span className="value">25</span>
-                <span className="scale">mph</span>
-                <span className="direction">195°</span>
+                <span className="value">{card.current.wind_kph}km</span>
+                <span className="direction">{card.current.wind_degree}°</span>
               </div>
-              <div className="sunrise">5:43 am</div>
-              <div className="sunset">8:21 pm</div>
             </div>
           </div>
         </div>}
