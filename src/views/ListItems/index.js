@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Card from './components/card';
+import Card from './components/Card';
 
 class ListItems extends Component {
   constructor(props){
@@ -20,6 +20,7 @@ class ListItems extends Component {
 
   render() {
     const cities = this.props.data;
+    console.log('card prop ====>',this.prop);
     return (
       <div>
         { this.state.doneLoading &&

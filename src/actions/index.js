@@ -12,6 +12,13 @@ export function closeDialogWindow() {
   }
 }
 
+export function refreshPage(city) {
+  return {
+    type: 'REFRESH',
+    payload: city,
+  }
+}
+
 export function addCityCard(city) {
   return {
     type: 'ADD_CARD',

@@ -1,5 +1,5 @@
-import { call, put, all, takeEvery } from 'redux-saga/effects'
-import weatherData from '../api'
+import { call, put, all, takeEvery } from 'redux-saga/effects';
+import weatherData from '../api';
 
 function* addCardWithData(action) {
   try {
