@@ -25,12 +25,6 @@ function* addCardWithData(action) {
   }
 }
 
-function* watchDataAdd() {
+export function* watchDataAdd() {
   yield takeEvery('ADD_CARD', addCardWithData)
-}
-
-export function* rootSaga(getState) {
-  yield all([
-    call(watchDataAdd)
-  ])
 }

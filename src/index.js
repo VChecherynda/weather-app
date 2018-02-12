@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import allReducers from './reducers';
 
-import { rootSaga } from './sagas/weather'
+import rootSaga from './sagas'
 
 import './index.css';
 import App from './App';
