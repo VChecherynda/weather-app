@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Header from './containers/header';
-import ListItems from './containers/listItems';
 import Dialog from './containers/dialog';
+import ListItems from './containers/listItems';
 
 import './App.css';
 
@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ListItems />
         <Dialog />
+        <ListItems />
       </div>
     );
   }

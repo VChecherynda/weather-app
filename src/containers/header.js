@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { OpenDialogWindow } from '../actions';
+import { openDialogWindow } from '../actions';
 
-import Header from '../components/Header';
+import Header from '../views/Header';
 
 function mapDispatchToProps(dispatch) {
   return {
-    dialogHandlerOpen: () => dispatch(OpenDialogWindow())
+    dialogHandlerOpen: () => dispatch(openDialogWindow())
   }
 }
 

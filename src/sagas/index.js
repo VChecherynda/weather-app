@@ -1,5 +1,5 @@
 import { call, all } from 'redux-saga/effects'
-import { watchDataAdd } from './Weather/weather'
+import { watchDataAdd } from './weather'
 
 export default function* rootSaga(getState) {
   yield all([

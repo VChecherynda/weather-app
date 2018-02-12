@@ -1,11 +1,11 @@
-export function OpenDialogWindow() {
+export function openDialogWindow() {
   return {
     type: 'OPEN_DIALOG',
     payload: true,
   }
 }
 
-export function CloseDialogWindow() {
+export function closeDialogWindow() {
   return {
     type: 'CLOSE_DIALOG',
     payload: false,

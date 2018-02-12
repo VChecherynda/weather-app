@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-import Main from './main';
-import Days from './daysOfTheWeek';;
+import ListItems from '../views/ListItems';
 
-class ListItems extends Component {
-  render() {
-    return (
-      <main className="main">
-        <div className="card weather-forecast">
-          <Main />
-          {/* <Days /> */}
-        </div>
-      </main>
-    )
-  }
+function mapStateToProps(state) {
+  return {
+    data: state.addWeatherCard.cities,
+  };
 }
 
-
-export default ListItems;
+export default connect(mapStateToProps)(ListItems);

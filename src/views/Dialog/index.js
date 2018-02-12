@@ -41,7 +41,12 @@ class Dialog extends Component {
               <div className="dialog-body">
                 <select id="selectCityToAdd" onChange={this.onChangeCity}>
                   {listOfCities.map((el,index) => (
-                    <option value={el.value} key={index}>{el.label}</option>
+                    <option
+                      value={el.value}
+                      key={index}
+                    >
+                      {el.label}
+                    </option>
                   ))}
                 </select>
               </div>

@@ -6,7 +6,9 @@ export default function weatherData(city) {
       return response
     })
     .then(function(json) {
-      console.log(JSON.stringify(json, null, 3))
+      // For console
+      console.log(JSON.stringify(json, null, 3));
+      // End
       return json;
     })
     .catch(function(ex) {

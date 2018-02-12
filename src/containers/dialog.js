@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { addCityCard, CloseDialogWindow } from '../actions';
+import { addCityCard, closeDialogWindow } from '../actions';
 
-import Dialog from '../components/Dialog';
+import Dialog from '../views/Dialog';
 
 function mapStateToProps(state) {
   return {
@@ -15,7 +15,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(addCityCard(city))
     },
     dialogHandlerClose: () => {
-      dispatch(CloseDialogWindow())
+      dispatch(closeDialogWindow())
     }
   }
 }
