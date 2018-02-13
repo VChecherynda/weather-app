@@ -5,8 +5,6 @@ class Header extends Component {
   render() {
     const { dialogHandlerOpen, refreshPage, city } = this.props;
 
-    console.log('header components ====>', this.props.data);
-
     return (
       <header className="header">
         <h1 className="headerTitle">Weather PWA</h1>

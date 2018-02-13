@@ -8,19 +8,22 @@ export function addWeatherCard(state = initialState, action) {
       return { ...state, data: action.payload }
 
     case 'ADD_CARD_SUCCESS':
-      const city = action.payload;
-      const { name } = city.location;
+      const incomeWeather = action.payload;
+      const { name } = incomeWeather.location;
 
       return {
         ...state,
         cities: {
           ...state.cities,
-          [name]: city
+          [name]: incomeWeather
         }
       }
 
     case 'REFRESH':
-      return { cities: [ state.cities[0] ] }
+      const intialWeather = action.payload;
+      const initialName = Object.keys(intialWeather)[0];
+
+      return { cities: { [initialName]: state.cities[initialName]} }
 
     default:
       return state;
