@@ -20,6 +20,7 @@ class ListItems extends Component {
 
   render() {
     const cities = this.props.data;
+    const deleteWeatherCard = this.props.deleteWeatherCard;
 
     return (
       <div>
@@ -27,8 +28,11 @@ class ListItems extends Component {
           <main className="main">
             {
               Object.keys(cities).map((cityName) => (
-                <div className="card weather-forecast">
-                  <Card key={cityName} card={cities[cityName]} />
+                <div key={cityName} className="card weather-forecast">
+                  <Card
+                    card={cities[cityName]}
+                    deleteWeatherCard={deleteWeatherCard}
+                  />
                 </div>
               ))
             }

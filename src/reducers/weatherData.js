@@ -19,6 +19,18 @@ export function addWeatherCard(state = initialState, action) {
         }
       }
 
+    // onClickRemoveCard (myObj, deleteKey) {
+    //   return Object.keys(myObj)
+    //     .filter(key => key !== deleteKey)
+    //     .reduce((result, current) => {
+    //       result[current] = myObj[current];
+    //       return result;
+    //   }, {});
+    // }
+
+    case 'DELETE_CARD':
+      return state
+
     case 'REFRESH':
       const intialWeather = action.payload;
       const initialName = Object.keys(intialWeather)[0];

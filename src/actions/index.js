@@ -19,9 +19,16 @@ export function refreshPage(city) {
   }
 }
 
-export function addCityCard(city) {
+export function addWeatherCard(city) {
   return {
     type: 'ADD_CARD',
+    payload: city,
+  }
+}
+
+export function deleteWeatherCard(city) {
+  return {
+    type: 'DELETE_CARD',
     payload: city,
   }
 }
