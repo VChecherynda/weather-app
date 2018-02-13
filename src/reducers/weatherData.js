@@ -1,5 +1,5 @@
 const initialState = {
-  cities: [],
+  cities: {},
 }
 
 export function addWeatherCard(state = initialState, action) {
@@ -8,7 +8,16 @@ export function addWeatherCard(state = initialState, action) {
       return { ...state, data: action.payload }
 
     case 'ADD_CARD_SUCCESS':
-      return { ...state, cities: [ ...state.cities, action.payload ] }
+      const city = action.payload;
+      const { name } = city.location;
+
+      return {
+        ...state,
+        cities: {
+          ...state.cities,
+          [name]: city
+        }
+      }
 
     case 'REFRESH':
       return { cities: [ state.cities[0] ] }

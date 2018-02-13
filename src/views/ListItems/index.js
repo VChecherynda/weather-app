@@ -20,15 +20,15 @@ class ListItems extends Component {
 
   render() {
     const cities = this.props.data;
-    console.log('card prop ====>',this.prop);
+
     return (
       <div>
         { this.state.doneLoading &&
           <main className="main">
             {
-              cities.map((city,index) => (
+              Object.keys(cities).map((cityName) => (
                 <div className="card weather-forecast">
-                  <Card key={index} card={city} />
+                  <Card key={cityName} card={cities[cityName]} />
                 </div>
               ))
             }
