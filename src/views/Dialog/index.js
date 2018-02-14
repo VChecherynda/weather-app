@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import './style.css';
 
-const listOfCities = [
-  { value: 'Boston', label: 'Boston, MA'},
-  { value: 'Austin', label: 'Austin, TX'},
-  { value: 'Chicago', label: 'Chicago, IL'},
-  { value: 'New York', label: 'New York, NY'},
-  { value: 'Portland', label: 'Portland, OR'},
-  { value: 'San Francisco', label: 'San Francisco, CA'},
-  { value: 'Seattle', label: 'Seattle, WA'}
-];
-
 class Dialog extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selectValue: listOfCities[0].value,
+      selectValue: props.listOfCities[0].value,
     }
   }
 
@@ -30,7 +20,7 @@ class Dialog extends Component {
   }
 
   render() {
-    const { isOpen, getWeatherAtCity, dialogHandlerClose } = this.props;
+    const { listOfCities, isOpen, getWeatherAtCity, dialogHandlerClose } = this.props;
 
     return (
       <div>

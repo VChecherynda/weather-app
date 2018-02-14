@@ -13,6 +13,7 @@ export function closeDialogWindow() {
 }
 
 export function refreshPage(city) {
+  console.log('action refresh ====>', city)
   return {
     type: 'REFRESH',
     payload: city,

@@ -9,7 +9,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, action) {
   return {
     dialogHandlerOpen: () => dispatch(openDialogWindow()),
     refreshPage: (city) => dispatch(refreshPage(city))

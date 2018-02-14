@@ -19,23 +19,37 @@ export function addWeatherCard(state = initialState, action) {
         }
       }
 
-    // onClickRemoveCard (myObj, deleteKey) {
-    //   return Object.keys(myObj)
-    //     .filter(key => key !== deleteKey)
-    //     .reduce((result, current) => {
-    //       result[current] = myObj[current];
-    //       return result;
-    //   }, {});
-    // }
+    case 'REFRESH':
+      return { ...state, data: action.payload }
+
+    case 'ADD_INITIAL_CARD_SUCCESS':
+      console.log('reducer intial ====>',action.payload);
+      const incomeInitialWeather = action.payload;
+      const initialName = incomeInitialWeather.location.name;
+
+      return {
+        ...state,
+        cities: {
+          [initialName]: incomeInitialWeather
+        }
+      }
 
     case 'DELETE_CARD':
-      return state
 
-    case 'REFRESH':
-      const intialWeather = action.payload;
-      const initialName = Object.keys(intialWeather)[0];
+      const filteredCitiesWeather = Object.keys(state.cities)
+        .reduce((acc, val) => {
+          if (val !== action.payload ) {
+            return Object.assign(acc, {[val]: state.cities[val]});
+          }
+          return acc;
+        }, {});
 
-      return { cities: { [initialName]: state.cities[initialName]} }
+      return {
+        ...state,
+        cities: {
+          ...filteredCitiesWeather,
+        }
+      };
 
     default:
       return state;

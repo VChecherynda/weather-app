@@ -11,12 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getWeatherAtCity: (city) => {
-      dispatch(addWeatherCard(city))
-    },
-    dialogHandlerClose: () => {
-      dispatch(closeDialogWindow())
-    }
+    getWeatherAtCity: (city) => dispatch(addWeatherCard(city)),
+    dialogHandlerClose: () => dispatch(closeDialogWindow()),
   }
 }
 
