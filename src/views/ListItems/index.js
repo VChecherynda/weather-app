@@ -24,7 +24,7 @@ class ListItems extends Component {
 
     return (
       <div>
-        { this.state.doneLoading &&
+        {this.state.doneLoading &&
           <main className="main">
             {
               Object.keys(cities).map((cityName) => (
