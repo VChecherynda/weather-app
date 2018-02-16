@@ -23,7 +23,6 @@ export function addWeatherCard(state = initialState, action) {
       return { ...state, data: action.payload }
 
     case 'ADD_INITIAL_CARD_SUCCESS':
-      console.log('reducer intial ====>',action.payload);
       const incomeInitialWeather = action.payload;
       const initialName = incomeInitialWeather.location.name;
 

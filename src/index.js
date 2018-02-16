@@ -21,8 +21,6 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga)
 
-const action = type => store.dispatch({type})
-
 ReactDOM.render(
 	<Provider store={store}>
 		<App />

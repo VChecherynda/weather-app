@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import { listOfCities } from '../../dataCities';
 
 import './style.css'
 
 class Header extends Component {
   render() {
-    const { dialogHandlerOpen, refreshPage, listOfCities } = this.props;
-
-    console.log(listOfCities[0].value);
+    const { dialogHandlerOpen, refreshPage } = this.props;
 
     return (
       <header className="header">

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './style.css';
 
+import { listOfCities } from '../../dataCities';
+
 class Dialog extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selectValue: props.listOfCities[0].value,
+      selectValue: listOfCities[0].value,
     }
   }
 
@@ -20,7 +22,7 @@ class Dialog extends Component {
   }
 
   render() {
-    const { listOfCities, isOpen, getWeatherAtCity, dialogHandlerClose } = this.props;
+    const { isOpen, getWeatherAtCity, dialogHandlerClose } = this.props;
 
     return (
       <div>
