@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { listOfCities } from '../../dataCities';
+import { listOfCities } from '../../sagas/api/dataCities';
 
 import './style.css'
 
