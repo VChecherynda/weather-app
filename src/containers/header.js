@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { openDialogWindow, refreshPage } from '../actions';
+import { openDialogWindow, refreshPage } from '../actionsСreators';
 
 import Header from '../views/Header';
 
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, action) {
   return {
-    dialogHandlerOpen: () => dispatch(openDialogWindow()),
+    dialogHandlerOpen: () => dispatch(openDialogWindow(true)),
     refreshPage: (city) => dispatch(refreshPage(city))
   }
 }

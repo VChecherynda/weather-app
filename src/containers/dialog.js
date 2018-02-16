@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addWeatherCard, closeDialogWindow } from '../actions';
+import { addWeatherCard, closeDialogWindow } from '../actionsСreators';
 
 import Dialog from '../views/Dialog';
 
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getWeatherAtCity: (city) => dispatch(addWeatherCard(city)),
-    dialogHandlerClose: () => dispatch(closeDialogWindow()),
+    dialogHandlerClose: () => dispatch(closeDialogWindow(false)),
   }
 }
 
