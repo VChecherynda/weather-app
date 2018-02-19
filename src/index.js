@@ -13,7 +13,7 @@ import {
 import rootSaga from './sagas'
 
 import App from './App';
-import Login from './views/Login';
+import Login from './containers/Login';
 import About from './views/About';
 
 import './index.css';
