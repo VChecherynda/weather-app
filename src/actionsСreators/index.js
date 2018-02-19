@@ -1,7 +1,20 @@
-import { OPEN_DIALOG, CLOSE_DIALOG, REFRESH, ADD_CARD, DELETE_CARD } from '../actionTypes'
+import {
+  OPEN_DIALOG,
+  CLOSE_DIALOG,
+  OPEN_SIDEBAR_MENU,
+  CLOSE_SIDEBAR_MENU,
+  REFRESH,
+  ADD_CARD,
+  DELETE_CARD
+} from '../actionTypes'
+
 import { createAction } from 'redux-actions';
 
 export const openDialogWindow = createAction(OPEN_DIALOG, data => data);
+
+export const openSidebarMenu = createAction(OPEN_SIDEBAR_MENU, data => data);
+
+export const closeSidebarMenu = createAction(CLOSE_SIDEBAR_MENU, data => data);
 
 export const closeDialogWindow = createAction(CLOSE_DIALOG, data => data);
 

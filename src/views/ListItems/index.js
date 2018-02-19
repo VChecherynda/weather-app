@@ -24,20 +24,22 @@ class ListItems extends Component {
 
     return (
       <div>
-        {this.state.doneLoading &&
-          <main className="main">
-            {
-              Object.keys(cities).map((cityName) => (
-                <div key={cityName} className="card weather-forecast">
-                  <Card
-                    card={cities[cityName]}
-                    deleteWeatherCard={deleteWeatherCard}
-                  />
-                </div>
-              ))
-            }
-          </main>
-        }
+
+      {
+        this.state.doneLoading &&
+        <main className="main">
+          {
+            Object.keys(cities).map((cityName) => (
+              <div key={cityName} className="card weather-forecast">
+                <Card
+                  card={cities[cityName]}
+                  deleteWeatherCard={deleteWeatherCard}
+                />
+              </div>
+            ))
+          }
+        </main>
+      }
       </div>
     )
   }

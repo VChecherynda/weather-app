@@ -5,10 +5,14 @@ import './style.css'
 
 class Header extends Component {
   render() {
-    const { dialogHandlerOpen, refreshPage } = this.props;
+    const { dialogHandlerOpen, openSidebarMenu, refreshPage } = this.props;
 
     return (
       <header className="header">
+        <span
+          onClick={() => openSidebarMenu(true)}
+          className="hamburger"
+        />
         <h1 className="headerTitle">Weather PWA</h1>
         <div className="headerBtnWrap">
 

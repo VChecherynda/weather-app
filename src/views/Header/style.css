@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+.hamburger {
+    width: 28px;
+    height: 28px;
+    margin: auto 0;
+    cursor: pointer;
+    background: url('../../images/header/menu.svg') center center no-repeat;
+}
+
 .header {
     display: flex;
     height: 56px;
