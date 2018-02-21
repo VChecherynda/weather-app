@@ -1,0 +1,70 @@
+import React, { Component } from 'react';
+
+import { auth } from '../firebase';
+
+const INITIAL_STATE = {
+  passwordOne: '',
+  passwordTwo: '',
+  error: null,
+}
+
+const byPropKey = (property, value) => () => ({
+  [property]: value,
+})
+
+class PasswordChangeForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { ...INITIAL_STATE };
+  }
+
+  onSubmit = (event) => {
+    const { passwordOne } = this.state;
+
+    auth.doPasswordUpdate(passwordOne)
+      .then(() => {
+        this.setState(() => this.setState({ ...INITIAL_STATE }))
+      })
+      .catch(error => {
+        this.setState(byPropKey('error', error));
+      })
+
+    event.preventDefault();
+  }
+
+  render() {
+    const {
+      passwordOne,
+      passwordTwo,
+      error,
+    } = this.state;
+
+    const isInvalid =
+      passwordOne !== passwordTwo ||
+      passwordOne === '';
+
+    return (
+      <form onSubmit={this.onSubmit}>
+        <input
+          value={passwordOne}
+          onChange={() => this.setState(byPropKey('passwordOne', event.target.value))}
+          type="password"
+          placeholder="Enter password"
+        />
+        <input
+          value={passwordOne}
+          onChange={() => this.setState(byPropKey('passwordOne', event.target.value))}
+          type="password"
+          placeholder="Enter password"
+        />
+        <button disabled={isInvalid} type="submit">
+          Password Change
+        </button>
+
+        {error && <p>{error.message}</p>}
+      </form>
+    )
+  }
+}
+
+export default PasswordChangeForm;
