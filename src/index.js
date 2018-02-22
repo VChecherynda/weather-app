@@ -4,17 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import allReducers from './reducers';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 import rootSaga from './sagas'
 
 import App from './App';
-import Login from './containers/Login';
-import About from './views/About';
 
 import './index.css';
 
@@ -31,12 +24,6 @@ sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <div>
-        <Route exact path="/" component={App} />
-        <Route path="/about" component={About} />
-        <Route path="/login" component={Login} />
-      </div>
-    </Router>
+    <App />
   </Provider>, document.getElementById('root')
 );

@@ -1,0 +1,36 @@
+
+.card-wrapper {
+  position: relative;
+}
+
+.close {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../../images/card/close.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.current {
+  display: flex;
+  flex-basis: 50%;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.current .visual,
+.current .description {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.wind span {
+  display: block;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { auth } from '../firebase';
 
@@ -8,31 +9,32 @@ const PasswordForgetPage = () =>
     <PasswordForgetForm />
   </div>
 
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
+
 const INITIAL_STATE = {
   email: '',
   error: null,
-}
-
-const byPropKey = (property, value) => () => ({
-  [property]: value,
-})
+};
 
 class PasswordForgetForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = { ...INITIAL_STATE };
   }
 
   onSubmit = (event) => {
-    const { passwordOne } = this.state;
+    const { email } = this.state;
 
-    auth.doPasswordUpdate(passwordOne)
+    auth.doPasswordReset(email)
       .then(() => {
-        this.setState(() => this.setState({ ...INITIAL_STATE }))
+        this.setState(() => ({ ...INITIAL_STATE }));
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
-      })
+      });
 
     event.preventDefault();
   }
@@ -48,18 +50,18 @@ class PasswordForgetForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          value={email}
-          onChange={() => this.setState(byPropKey('email', event.target.value))}
-          type="email"
-          placeholder="Enter password"
+          value={this.state.email}
+          onChange={event => this.setState(byPropKey('email', event.target.value))}
+          type="text"
+          placeholder="Email Address"
         />
         <button disabled={isInvalid} type="submit">
-            Reset My Password
+          Reset My Password
         </button>
 
-        {error && <p>{error.message}</p>}
+        { error && <p>{error.message}</p> }
       </form>
-    )
+    );
   }
 }
 
