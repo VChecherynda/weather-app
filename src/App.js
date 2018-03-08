@@ -5,10 +5,11 @@ import {
   Route,
 } from 'react-router-dom'
 
-import HomePage from './views/Home';
+import MainPage from './containers/Main';
 import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget';
+import withAuthentication from './components/withAuthentication';
 
 import * as routes from './constants/routes';
 
@@ -22,7 +23,7 @@ const App = () => (
 
       <Route
         exact path={routes.HOME}
-        component={() => <HomePage />}
+        component={() => <MainPage />}
       />
 
       <Route
@@ -39,4 +40,4 @@ const App = () => (
   </Router>
 )
 
-export default App;
+export default withAuthentication(App);

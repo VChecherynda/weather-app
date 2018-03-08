@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { listOfCities } from '../../sagas/api/dataCities';
+import SignOut from '../../components/SignOut';
 
 import './style.css'
 
@@ -15,6 +16,7 @@ class Header extends Component {
         />
         <h1 className="headerTitle">Weather PWA</h1>
         <div className="headerBtnWrap">
+          <SignOut />
 
           <button
             id="butRefresh"

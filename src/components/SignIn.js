@@ -58,7 +58,7 @@ class SignInForm extends Component {
       email,
       password,
       error
-    } = this.props;
+    } = this.state;
 
     const isInvalid =
       password === '' ||
@@ -79,7 +79,7 @@ class SignInForm extends Component {
           placeholder="Password"
         />
         <button disabled={isInvalid} type="submit">
-          Sign Up
+          Sign In
         </button>
 
         {error && <p>{error.message}</p>}

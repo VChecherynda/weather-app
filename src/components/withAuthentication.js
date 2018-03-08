@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import { firebase } from '../firebase';
 
-const withAuthentications = (Component) => {
-  class WithAuthentications extends React.Component {
+const withAuthentication = (Component) => {
+  class WithAuthentication extends React.Component {
     componentDidMount() {
       const { onSetAuthUser } = this.props;
 
@@ -30,5 +30,4 @@ const withAuthentications = (Component) => {
 
 }
 
-export default withAuthentications;
-
+export default withAuthentication;
