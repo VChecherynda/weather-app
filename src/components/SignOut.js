@@ -17,6 +17,7 @@ class SignOut extends Component {
       .then(() => {
         history.push('/');
       })
+      
       .catch(error => {
         console.log(error);
       });
