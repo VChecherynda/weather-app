@@ -6,10 +6,10 @@ import {
 } from 'react-router-dom'
 
 import MainPage from './containers/Main';
-import SignUpPage from './components/SignUp';
-import SignInPage from './components/SignIn';
-import PasswordForgetPage from './components/PasswordForget';
-import withAuthentication from './components/withAuthentication';
+import SignUpPage from './views/SignUp';
+import SignInPage from './views/SignIn';
+import PasswordForgetPage from './views/PasswordForget';
+import withAuthentication from './containers/withAuthentication';
 
 import * as routes from './constants/routes';
 

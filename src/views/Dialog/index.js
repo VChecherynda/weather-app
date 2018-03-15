@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { listOfCities } from '../../sagas/api/dataCities';
 
-import './style.css';
+import '../../assets/styles/Dialog/style.css';
 
 class Dialog extends Component {
   constructor(props){

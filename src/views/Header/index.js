@@ -1,43 +1,41 @@
 import React, { Component } from 'react';
 import { listOfCities } from '../../sagas/api/dataCities';
-import SignOut from '../../components/SignOut';
+import SignOut from '../SignOut';
 
-import './style.css'
+import '../../assets/styles/Header/style.css'
 
-class Header extends Component {
-  render() {
-    const { dialogHandlerOpen, openSidebarMenu, refreshPage } = this.props;
+const Header = (props) => {
+  const { dialogHandlerOpen, openSidebarMenu, refreshPage } = props;
 
-    return (
-      <header className="header">
-        <span
-          onClick={() => openSidebarMenu(true)}
-          className="hamburger"
-        />
-        <h1 className="headerTitle">Weather PWA</h1>
-        <div className="headerBtnWrap">
-          <SignOut />
+  return (
+    <header className="header">
+      <span
+        onClick={() => openSidebarMenu(true)}
+        className="hamburger"
+      />
+      <h1 className="headerTitle">Weather PWA</h1>
+      <div className="headerBtnWrap">
+        <SignOut />
 
-          <button
-            id="butRefresh"
-            onClick={() => refreshPage(listOfCities[0].value)}
-            className="headerButton"
-          >
-            Refresh
-          </button>
+        <button
+          id="butRefresh"
+          onClick={() => refreshPage(listOfCities[0].value)}
+          className="headerButton"
+        >
+          Refresh
+        </button>
 
-          <button
-            id="butAdd"
-            onClick={() => dialogHandlerOpen()}
-            className="headerButton"
-          >
-            Add
-          </button>
+        <button
+          id="butAdd"
+          onClick={() => dialogHandlerOpen()}
+          className="headerButton"
+        >
+          Add
+        </button>
 
-        </div>
-      </header>
-    )
-  }
+      </div>
+    </header>
+  )
 }
 
 export default Header;

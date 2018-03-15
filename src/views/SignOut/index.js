@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { auth } from '../firebase';
-import * as routes from '../constants/routes';
+import { auth } from '../../assets/libs/firebase';
+import * as routes from '../../constants/routes';
 
 class SignOut extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class SignOut extends Component {
       .then(() => {
         history.push('/');
       })
-      
+
       .catch(error => {
         console.log(error);
       });

@@ -1,39 +1,37 @@
 import React, { Component } from 'react';
 
-import './style.css';
+import '../../../../assets/styles/ListItems/components/card.css';
 
-class Card extends Component {
-  render() {
-    const { card, deleteWeatherCard } = this.props;
+const Card = (props) => {
+  const { card, deleteWeatherCard } = props;
 
-    return (
-      <div className="card-wrapper">
-        <div
-          onClick={() => deleteWeatherCard(card.location.name)}
-          className="close"
-        />
-        <div className="location">{card.location.name}</div>
-        <div className="card-last-updated" hidden="">{card.current.last_updated}</div>
-        <div className="current">
-        <div className="visual">
-          <div className="icon">
-            <img src={card.current.condition.icon} alt={'weatherIcon'}/>
-          </div>
-          <div className="temperature">
-            <span className="value">{card.current.temp_c}</span><span className="scale">°C</span>
-          </div>
+  return (
+    <div className="card-wrapper">
+      <div
+        onClick={() => deleteWeatherCard(card.location.name)}
+        className="close"
+      />
+      <div className="location">{card.location.name}</div>
+      <div className="card-last-updated" hidden="">{card.current.last_updated}</div>
+      <div className="current">
+      <div className="visual">
+        <div className="icon">
+          <img src={card.current.condition.icon} alt={'weatherIcon'}/>
         </div>
-        <div className="description">
-          <div className="humidity">{card.current.humidity}%</div>
-          <div className="wind">
-            <span className="value">{card.current.wind_kph}km</span>
-            <span className="direction">{card.current.wind_degree}°</span>
-          </div>
-        </div>
+        <div className="temperature">
+          <span className="value">{card.current.temp_c}</span><span className="scale">°C</span>
         </div>
       </div>
-    );
-  }
+      <div className="description">
+        <div className="humidity">{card.current.humidity}%</div>
+        <div className="wind">
+          <span className="value">{card.current.wind_kph}km</span>
+          <span className="direction">{card.current.wind_degree}°</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  );
 }
 
 export default Card;

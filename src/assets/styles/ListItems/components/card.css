@@ -1,4 +1,3 @@
-
 .card-wrapper {
   position: relative;
 }
@@ -7,7 +6,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url('../../../../images/card/close.svg');
+  background-image: url('../../../images/card/close.svg');
   background-repeat: no-repeat;
   cursor: pointer;
   position: absolute;
