@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { addWeatherCard, closeDialogWindow } from '../actionsСreators';
+import { addWeatherCard } from '../store/card/actions';
+import { closeDialogWindow } from '../store/dialog/actions';
 
 import Dialog from '../views/Dialog';
 

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { deleteWeatherCard } from '../actionsСreators';
+import { deleteWeatherCard } from '../store/card/actions';
 
 import ListItems from '../views/ListItems';
 
