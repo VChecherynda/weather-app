@@ -15,11 +15,6 @@ const SignInPage = ({ history }) =>
     <SignUpLink />
   </div>
 
-
-const byPropKey = (propertyName, value) => () =>  ({
-  [propertyName]: value
-})
-
 const INITIAL_STATE = {
   email: '',
   password: '',
@@ -48,7 +43,7 @@ class SignInForm extends Component {
         history.push(routes.HOME)
       })
       .catch(error => {
-        this.setState(byPropKey('error', error))
+        this.setState({'error': error})
       });
 
     event.preventDefault();
@@ -69,13 +64,13 @@ class SignInForm extends Component {
       <form onSubmit={this.onSubmit}>
         <input
           value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
+          onChange={e => this.setState({'email': e.target.value})}
           type="text"
           placeholder="Email Address"
         />
         <input
           value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
+          onChange={e => this.setState({'password': e.target.value})}
           type="password"
           placeholder="Password"
         />

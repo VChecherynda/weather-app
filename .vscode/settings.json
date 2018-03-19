@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.liquid": "html",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "all"
+  },
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
+  "editor.rulers": [90]
+}
