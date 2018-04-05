@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 import { addWeatherCard } from './weatherData';
 import { modal } from './modal';
 import { sidebar } from './sidebar';
@@ -11,6 +12,7 @@ const rootReducers = combineReducers({
   session: session,
   sidebar: sidebar,
   modal: modal,
+  router: routerReducer,
 });
 
 export default rootReducers;

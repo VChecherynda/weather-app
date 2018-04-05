@@ -22,7 +22,7 @@ const App = () => (
 
       <Route
         exact path={routes.HOME}
-        component={() => <Home />}
+        component={(props) => <Home {...props}/>}
       />
 
       <Route

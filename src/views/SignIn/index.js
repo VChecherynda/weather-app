@@ -40,7 +40,7 @@ class SignInForm extends Component {
     auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({...INITIAL_STATE}));
-        history.push(routes.HOME)
+        history.push('/home');
       })
       .catch(error => {
         this.setState({'error': error})
@@ -50,15 +50,9 @@ class SignInForm extends Component {
   }
 
   render() {
-    const {
-      email,
-      password,
-      error
-    } = this.state;
+    const { email, password, error } = this.state;
 
-    const isInvalid =
-      password === '' ||
-      email === '';
+    const isInvalid = password === '' || email === '';
 
     return(
       <form onSubmit={this.onSubmit}>

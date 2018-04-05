@@ -20,10 +20,12 @@ const store = createStore(
   applyMiddleware(sagaMiddleware),
 );
 
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>, document.getElementById('root')
 );
+
+export default store;
