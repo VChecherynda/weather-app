@@ -7,7 +7,7 @@ import {
 
 import Home from './views/Home';
 import SignUpPage from './views/SignUp';
-import SignInPage from './views/SignIn';
+import SignInPage from './containers/SignIn';
 import PasswordForgetPage from './views/PasswordForget';
 
 import * as routes from './constants/routes';

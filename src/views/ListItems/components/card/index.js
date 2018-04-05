@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
     const { card, deleteWeatherCard } = this.props;
 
@@ -15,7 +19,7 @@ class Card extends Component {
         <div className="current">
         <div className="visual">
           <div className="icon">
-            <img src={card.current.condition.icon} alt="weater-icon"/>
+            <img src={card.current.condition.icon} />
           </div>
           <div className="temperature">
             <span className="value">{card.current.temp_c}</span><span className="scale">°C</span>
