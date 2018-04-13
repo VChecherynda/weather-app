@@ -8,12 +8,12 @@ import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../assets/libs/firebase'
 import * as routes from '../../constants/routes';
 
-const SignInPage = ({ history }) => {
-  console.log('sign in view', this.props);
+const SignInPage = (props) => {
+  console.log('sign in view', props);
   return(
     <div>
       <h1>Sign in</h1>
-      <SignInForm history={history} />
+      <SignInForm submitForm={props.submitForm} />
       <PasswordForgetLink />
       <SignUpLink />
     </div>

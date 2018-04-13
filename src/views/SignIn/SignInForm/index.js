@@ -20,9 +20,7 @@ class SignInForm extends Component {
       const { email, password } = this.state;
       const { history, submitForm } = this.props;
 
-      console.log(this.props);
-
-      submitForm( history );
+      submitForm(history);
 
       event.preventDefault();
     }
@@ -35,19 +33,21 @@ class SignInForm extends Component {
         return(
           <form onSubmit={this.onSubmit}>
             <input
-            value={email}
-            onChange={e => this.setState({'email': e.target.value})}
-            type="text"
-            placeholder="Email Address"
+              value={email}
+              onChange={e => this.setState({'email': e.target.value})}
+              type="text"
+              placeholder="Email Address"
             />
+
             <input
-            value={password}
-            onChange={e => this.setState({'password': e.target.value})}
-            type="password"
-            placeholder="Password"
+              value={password}
+              onChange={e => this.setState({'password': e.target.value})}
+              type="password"
+              placeholder="Password"
             />
+
             <button disabled={isInvalid} type="submit">
-            Sign In
+              Sign In
             </button>
 
             {error && <p>{error.message}</p>}
