@@ -1,4 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { push } from 'react-router-redux'
 
 import { auth } from '../../assets/libs/firebase';
 import * as routes from '../../constants/routes';
@@ -9,10 +10,9 @@ function* signInUserWorker({ payload }) {
   const { history, email, password } = payload;
 
   try {
-
     yield call(auth.doSignInWithEmailAndPassword,email, password);
     yield put({type: "SIGN_IN_SUCCESS"});
-    history.push('/home');
+    yield put(push('/home'));
 
   } catch (e) {
     yield put({type: "SIGN_IN_FAILED", message: e.message });

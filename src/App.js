@@ -1,42 +1,39 @@
 import React, { Component } from 'react';
 
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom'
+import { Route } from 'react-router-dom';
+
+import store from './index.js';
+
+import * as routes from './constants/routes';
 
 import Home from './views/Home';
 import SignUpPage from './views/SignUp';
 import SignInPage from './containers/SignIn';
 import PasswordForgetPage from './views/PasswordForget';
 
-import * as routes from './constants/routes';
 
 const App = () => (
-  <Router>
-    <div>
-      <Route
-        exact path={'/'}
-        component={() => <SignInPage />}
-      />
+  <div>
+    <Route
+      exact path={'/'}
+      component={() => <SignInPage />}
+    />
 
-      <Route
-        exact path={routes.HOME}
-        component={(props) => <Home {...props}/>}
-      />
+    <Route
+      exact path={routes.HOME}
+      component={(props) => <Home {...props}/>}
+    />
 
-      <Route
-        exact path={routes.SIGN_UP}
-        component={() => <SignUpPage />}
-      />
+    <Route
+      exact path={routes.SIGN_UP}
+      component={() => <SignUpPage />}
+    />
 
-      <Route
-        exact path={routes.PASSWORD_FORGET}
-        component={() => <PasswordForgetPage />}
-      />
-
-    </div>
-  </Router>
+    <Route
+      exact path={routes.PASSWORD_FORGET}
+      component={() => <PasswordForgetPage />}
+    />
+  </div>
 )
 
 export default App;
