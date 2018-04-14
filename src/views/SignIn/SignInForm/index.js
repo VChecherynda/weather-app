@@ -20,7 +20,7 @@ class SignInForm extends Component {
       const { email, password } = this.state;
       const { history, submitForm } = this.props;
 
-      submitForm(history);
+      submitForm({ 'history': history, 'email': email,'password': password});
 
       event.preventDefault();
     }

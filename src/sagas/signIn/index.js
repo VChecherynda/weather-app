@@ -6,12 +6,11 @@ import * as routes from '../../constants/routes';
 import { submitForm } from '../../store/signIn/actions';
 
 function* signInUserWorker({ payload }) {
-  // const { email, password } = payload;
-
-  const history = payload;
+  const { history, email, password } = payload;
 
   try {
-    // const user = yield call(auth.doSignInWithEmailAndPassword,email, password);
+
+    yield call(auth.doSignInWithEmailAndPassword,email, password);
     yield put({type: "SIGN_IN_SUCCESS"});
     history.push('/home');
 

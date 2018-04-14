@@ -9,7 +9,7 @@ import { auth } from '../../assets/libs/firebase'
 import * as routes from '../../constants/routes';
 
 const SignInPage = (props) => {
-  console.log('sign in view', props);
+  console.log('sign in view ====>', props);
   return(
     <div>
       <h1>Sign in</h1>
