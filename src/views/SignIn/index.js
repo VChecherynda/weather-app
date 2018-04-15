@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import SignInForm from '../../containers/SignIn';
 import SignUpLink from '../SignUp/SignUpLink';
-import { PasswordForgetLink } from '../PasswordForget';
+import PasswordForgetLink from '../PasswordForget/PasswordForgetLink';
 
 import { auth } from '../../assets/libs/firebase'
 import * as routes from '../../constants/routes';

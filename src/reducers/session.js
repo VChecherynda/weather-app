@@ -1,12 +1,13 @@
 const INITIAL_STATE = {
-  authUser: null,
+  // authUser: null,
+  isResetPassword: false,
   error: null,
 };
 
-const applySetAuthUser = (state, action) => ({
-  ...state,
-  authUser: action.authUser,
-});
+// const applySetAuthUser = (state, action) => ({
+//   ...state,
+//   authUser: action.authUser,
+// });
 
 const errorHandler = (state, action) => ({
   ...state,
@@ -15,8 +16,17 @@ const errorHandler = (state, action) => ({
 
 function sessionReducer(state = INITIAL_STATE, action) {
   switch(action.type) {
-    case 'AUTH_USER_SET': {
-      return applySetAuthUser(state, action);
+    // case 'AUTH_USER_SET': {
+    //   return applySetAuthUser(state, action);
+    // }
+    case 'PASSWORD_RESET_SUCCESS': {
+      return {...state,
+        isResetPassword: true,
+        error: null,
+      };
+    }
+    case 'PASSWORD_RESET_FAILED': {
+      return errorHandler(state, action);
     }
     case 'SIGN_IN_FAILED': {
       return errorHandler(state, action);
