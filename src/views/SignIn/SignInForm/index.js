@@ -11,53 +11,53 @@ const INITIAL_STATE = {
 }
 
 class SignInForm extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {...INITIAL_STATE};
-      console.log('signInForm view ====>', props.error);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {...INITIAL_STATE};
+    console.log('signInForm view ====>', props.error);
+  }
 
-    onSubmit = (event) => {
-      const { email, password } = this.state;
-      const { submitForm } = this.props;
+  onSubmit = (event) => {
+    const { email, password } = this.state;
+    const { submitForm } = this.props;
 
-      submitForm({
-        'email': email,
-        'password': password
-      });
+    submitForm({
+      'email': email,
+      'password': password
+    });
 
-      event.preventDefault();
-    }
+    event.preventDefault();
+  }
 
-    render() {
-        const { email, password, error } = this.state;
+  render() {
+    const { email, password, error } = this.state;
 
-        const isInvalid = password === '' || email === '';
+    const isInvalid = password === '' || email === '';
 
-        return(
-          <form onSubmit={this.onSubmit}>
-            <input
-              value={email}
-              onChange={e => this.setState({'email': e.target.value})}
-              type="text"
-              placeholder="Email Address"
-            />
+    return(
+      <form onSubmit={this.onSubmit}>
+        <input
+          value={email}
+          onChange={e => this.setState({'email': e.target.value})}
+          type="text"
+          placeholder="Email Address"
+        />
 
-            <input
-              value={password}
-              onChange={e => this.setState({'password': e.target.value})}
-              type="password"
-              placeholder="Password"
-            />
+        <input
+          value={password}
+          onChange={e => this.setState({'password': e.target.value})}
+          type="password"
+          placeholder="Password"
+        />
 
-            <button disabled={isInvalid} type="submit">
-              Sign In
-            </button>
+        <button disabled={isInvalid} type="submit">
+          Sign In
+        </button>
 
-            <p>{this.props.error}</p>
-          </form>
-        )
-    }
+        <p>{this.props.error}</p>
+      </form>
+    )
+  }
 }
 
 export default SignInForm;

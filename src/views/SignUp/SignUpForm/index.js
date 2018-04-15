@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 
-// import { auth } from '../../assets/libs/firebase';
-// import * as routes from '../../constants/routes';
-
 const INITIAL_STATE = {
   username: '',
   email: '',
   passwordOne: '',
   passwordTwo: '',
-  error: null,
 }
 
 class SignUpForm extends Component {
@@ -28,14 +24,6 @@ class SignUpForm extends Component {
     const { submitSignUpForm } = this.props;
 
     submitSignUpForm({ email, passwordOne });
-    // auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-      // .then(authUser => {
-      //   this.setState(() => ({ ...INITIAL_STATE }));
-      //   history.push(routes.HOME);
-      // })
-      // .catch(error => {
-      //   this.setState(byPropKey('error', error));
-      // });
 
     event.preventDefault();
   }
@@ -46,7 +34,6 @@ class SignUpForm extends Component {
       email,
       passwordOne,
       passwordTwo,
-      error,
     } = this.state;
 
     const isInvalid =
@@ -85,7 +72,7 @@ class SignUpForm extends Component {
           Sign Up
         </button>
 
-        {error && <p>{error.message}</p>}
+        <p>{this.props.error}</p>
       </form>
     )
   }

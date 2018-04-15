@@ -21,6 +21,9 @@ function sessionReducer(state = INITIAL_STATE, action) {
     case 'SIGN_IN_FAILED': {
       return errorHandler(state, action);
     }
+    case 'SIGN_UP_FAILED': {
+      return errorHandler(state, action);
+    }
     default: return state;
   }
 }
