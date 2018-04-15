@@ -8,7 +8,7 @@ import * as routes from './constants/routes';
 
 import Home from './views/Home';
 import SignUpPage from './views/SignUp';
-import SignInPage from './containers/SignIn';
+import SignInPage from './views/SignIn';
 import PasswordForgetPage from './views/PasswordForget';
 
 

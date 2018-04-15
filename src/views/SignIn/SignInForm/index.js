@@ -14,13 +14,17 @@ class SignInForm extends Component {
     constructor(props) {
       super(props);
       this.state = {...INITIAL_STATE};
+      console.log('signInForm view ====>', props.error);
     }
 
     onSubmit = (event) => {
       const { email, password } = this.state;
-      const { history, submitForm } = this.props;
+      const { submitForm } = this.props;
 
-      submitForm({ 'history': history, 'email': email,'password': password});
+      submitForm({
+        'email': email,
+        'password': password
+      });
 
       event.preventDefault();
     }
@@ -50,10 +54,10 @@ class SignInForm extends Component {
               Sign In
             </button>
 
-            {error && <p>{error.message}</p>}
+            <p>{this.props.error}</p>
           </form>
         )
     }
 }
 
-export default withRouter(SignInForm);
+export default SignInForm;

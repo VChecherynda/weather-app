@@ -1,7 +1,13 @@
 import { connect } from 'react-redux';
 import { submitForm } from '../store/signIn/actions';
 
-import SignIn from '../views/SignIn';
+import SignIn from '../views/SignIn/SignInForm';
+
+function mapStateToProps(state) {
+  return {
+    error: state.session.error,
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -9,4 +15,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect( null, mapDispatchToProps)(SignIn);
+export default connect( mapStateToProps, mapDispatchToProps)(SignIn);

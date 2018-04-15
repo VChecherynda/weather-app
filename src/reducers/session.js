@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   authUser: null,
+  error: null,
 };
 
 const applySetAuthUser = (state, action) => ({
@@ -7,10 +8,18 @@ const applySetAuthUser = (state, action) => ({
   authUser: action.authUser,
 });
 
+const errorHandler = (state, action) => ({
+  ...state,
+  error: action.errorMessaage,
+});
+
 function sessionReducer(state = INITIAL_STATE, action) {
   switch(action.type) {
     case 'AUTH_USER_SET': {
       return applySetAuthUser(state, action);
+    }
+    case 'SIGN_IN_FAILED': {
+      return errorHandler(state, action);
     }
     default: return state;
   }
