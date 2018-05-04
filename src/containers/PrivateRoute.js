@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
+import {
+  Redirect,
+  Route
+} from 'react-router';
 
 import { connect } from 'react-redux';
 
-const PrivateRouteComponent = (props) => {
-  console.log('PrivateRouteComponent', props);
+const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
-    <div>Test</div>
-    // <Route {...rest} render={props => (
-    //   fakeAuth.isAuthenticated ? (
-    //     <Component {...props}/>
-    //   ) : (
-    //     <Redirect to={{
-    //       pathname: '/login',
-    //       state: { from: props.location }
-    //     }}/>
-    //   )
-    // )}/>
+    <Route {...rest} render={ props => {
+      return(
+        rest.authUser ? (
+          <Component { ...props }/>
+        ) : (
+          <Redirect to={{
+            pathname: '/',
+            state: { from: props.location }
+          }}/>
+        )
+      )
+    }}/>
   );
 }
-
 
 const mapStateToProps = (state) => {
   return {
@@ -26,4 +29,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(PrivateRouteComponent);
+export default connect(mapStateToProps, null)(PrivateRoute);

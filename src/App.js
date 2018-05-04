@@ -13,18 +13,17 @@ import PasswordForgetPage from './views/PasswordForget';
 
 import PrivateRoute from './containers/PrivateRoute';
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
-      <PrivateRoute />
       <Route
         exact path={'/'}
         component={() => <SignInPage />}
       />
 
-      <Route
+      <PrivateRoute
         exact path={routes.HOME}
-        component={(props) => <Home {...props}/>}
+        component={() => <Home/>}
       />
 
       <Route

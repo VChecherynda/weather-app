@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  authUser: null,
+  authUser: false,
   isResetPassword: false,
   error: null,
 };
