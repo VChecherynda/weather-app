@@ -11,9 +11,12 @@ import SignUpPage from './views/SignUp';
 import SignInPage from './views/SignIn';
 import PasswordForgetPage from './views/PasswordForget';
 
+import PrivateRoute from './containers/PrivateRoute';
+
 const App = () => {
   return (
     <div>
+      <PrivateRoute />
       <Route
         exact path={'/'}
         component={() => <SignInPage />}
