@@ -11,29 +11,30 @@ import SignUpPage from './views/SignUp';
 import SignInPage from './views/SignIn';
 import PasswordForgetPage from './views/PasswordForget';
 
+const App = () => {
+  return (
+    <div>
+      <Route
+        exact path={'/'}
+        component={() => <SignInPage />}
+      />
 
-const App = () => (
-  <div>
-    <Route
-      exact path={'/'}
-      component={() => <SignInPage />}
-    />
+      <Route
+        exact path={routes.HOME}
+        component={(props) => <Home {...props}/>}
+      />
 
-    <Route
-      exact path={routes.HOME}
-      component={(props) => <Home {...props}/>}
-    />
+      <Route
+        exact path={routes.SIGN_UP}
+        component={() => <SignUpPage />}
+      />
 
-    <Route
-      exact path={routes.SIGN_UP}
-      component={() => <SignUpPage />}
-    />
-
-    <Route
-      exact path={routes.PASSWORD_FORGET}
-      component={() => <PasswordForgetPage />}
-    />
-  </div>
-)
+      <Route
+        exact path={routes.PASSWORD_FORGET}
+        component={() => <PasswordForgetPage />}
+      />
+    </div>
+  )
+}
 
 export default App;
