@@ -5,7 +5,7 @@ import SignIn from '../views/SignIn/SignInForm';
 
 function mapStateToProps(state) {
   return {
-    error: state.session.error,
+    error: state.session.signIn.error,
   };
 }
 

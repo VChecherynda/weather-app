@@ -17,12 +17,13 @@ class SignInForm extends Component {
   }
 
   onSubmit = (event) => {
+    console.log(this.state);
     const { email, password } = this.state;
     const { submitForm } = this.props;
 
     submitForm({
-      'email': email,
-      'password': password
+      email,
+      password
     });
 
     event.preventDefault();

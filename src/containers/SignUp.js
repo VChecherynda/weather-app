@@ -5,7 +5,7 @@ import SignUp from '../views/SignUp/SignUpForm';
 
 function mapStateToProps(state) {
   return {
-    error: state.session.error,
+    error: state.session.signUp.error,
   };
 }
 

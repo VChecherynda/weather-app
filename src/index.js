@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
-import allReducers from './reducers';
+import allReducers from './store/reducers';
 
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
@@ -19,7 +19,6 @@ import './index.css';
 
 const history = createHistory();
 const middleware = routerMiddleware(history);
-
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(

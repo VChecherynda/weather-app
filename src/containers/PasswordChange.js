@@ -5,7 +5,7 @@ import PasswordChangeForm from '../views/PasswordChange/PasswordChangeForm';
 
 function mapStateToProps(state) {
   return {
-    error: state.session.error,
+    error: state.session.passwordReset.error,
   };
 }
 

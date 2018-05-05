@@ -7,6 +7,7 @@ import {
 import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+  console.log(rest);
   return (
     <Route {...rest} render={ props => {
       return(
@@ -25,7 +26,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 const mapStateToProps = (state) => {
   return {
-    authUser: state.session.authUser,
+    authUser: state.session.sessionReducer.authUser,
   };
 };
 
