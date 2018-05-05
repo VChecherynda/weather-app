@@ -6,6 +6,14 @@ import * as routes from '../../constants/routes';
 
 import { submitSignUpForm } from '../../store/signUp/actions';
 
+function* onAuthStateChangedWorker(user) {
+  yield put({ type: 'AUTH_USER_SET', exist: true });
+
+  if (user) {
+    yield put(push(routes.HOME));
+  }
+}
+
 function* signUpUserWorker({ payload }) {
   const { email, passwordOne } = payload;
 
@@ -21,5 +29,6 @@ function* signUpUserWorker({ payload }) {
 }
 
 export function* watchSignUp() {
-  yield takeEvery(submitSignUpForm, signUpUserWorker)
+  yield takeEvery(submitSignUpForm, signUpUserWorker);
+  yield takeEvery(submitSignUpForm, onAuthStateChangedWorker);
 }

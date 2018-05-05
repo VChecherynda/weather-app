@@ -17,7 +17,7 @@ function* signOutUserWorker() {
     yield put(push('/'));
 
   } catch (e) {
-    yield put({type: "SIGN_OUT_FAILED", errorMessaage: e.message });
+    yield put({type: "SIGN_OUT_FAILED"});
 
   }
 }
