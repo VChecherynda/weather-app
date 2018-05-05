@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { listOfCities } from '../../store/api/dataCities';
-import SignOut from '../SignOut';
+import SignOut from '../../containers/SignOut';
 
 import '../../assets/styles/Header/style.css'
 

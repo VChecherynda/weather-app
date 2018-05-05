@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { auth } from '../../assets/libs/firebase';
+import { signOut } from '../../store/signOut/action';
 
 class SignOut extends Component {
 
-  onClick = (event) => {
-    console.log(this.props);
-    const { history } = this.props;
-
-    auth.doSignOut()
-      .then(() => {
-        history.push('/');
-      })
-
-      .catch(error => {
-        console.log(error);
-      });
-
-    event.preventDefault();
+  onClick = () => {
+    console.log('signOut view',this.props);
+    this.props.signOut();
   }
 
   render() {
     return (
       <button
-      type="button"
-      onClick={this.onClick}
-    >
-      Sign out
-    </button>
+        type="button"
+        onClick={this.onClick}
+      >
+        Sign out
+      </button>
     )
   }
 

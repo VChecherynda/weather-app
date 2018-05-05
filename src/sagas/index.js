@@ -3,7 +3,7 @@ import { watchDataAdd } from './weather';
 import { watchPasswordForget } from './passwordForget';
 import { watchSignIn } from './signIn';
 import { watchSignUp } from './signUp';
-
+import { watchSignOut } from './signOut';
 
 export default function* rootSaga(getState) {
   yield all([
@@ -11,5 +11,6 @@ export default function* rootSaga(getState) {
     call(watchSignIn),
     call(watchSignUp),
     call(watchPasswordForget),
+    call(watchSignOut),
   ])
 }
