@@ -15,7 +15,6 @@ function* onAuthStateChangedWorker(user) {
   }
 }
 
-
 function* signInUserWorker({ payload }) {
   const { email, password } = payload;
 
@@ -28,6 +27,8 @@ function* signInUserWorker({ payload }) {
 }
 
 export function* watchSignIn() {
-  yield takeEvery(submitForm, signInUserWorker);
-  yield takeEvery(submitForm, onAuthStateChangedWorker)
+  yield [
+    takeEvery(submitForm, signInUserWorker),
+    takeEvery(submitForm, onAuthStateChangedWorker),
+  ]
 }

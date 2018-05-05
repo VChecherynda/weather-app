@@ -29,6 +29,8 @@ function* signUpUserWorker({ payload }) {
 }
 
 export function* watchSignUp() {
-  yield takeEvery(submitSignUpForm, signUpUserWorker);
-  yield takeEvery(submitSignUpForm, onAuthStateChangedWorker);
+  yield [
+    takeEvery(submitSignUpForm, signUpUserWorker),
+    takeEvery(submitSignUpForm, onAuthStateChangedWorker),
+  ]
 }

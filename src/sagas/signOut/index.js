@@ -23,6 +23,8 @@ function* signOutUserWorker() {
 }
 
 export function* watchSignOut() {
-  yield takeEvery(signOut, signOutUserWorker);
-  yield takeEvery(signOut, onAuthStateChangedWorker);
+  yield [
+    takeEvery(signOut, signOutUserWorker),
+    takeEvery(signOut, signOutUserWorker),
+  ]
 }
