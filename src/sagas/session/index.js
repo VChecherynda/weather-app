@@ -7,17 +7,22 @@ import * as routes from '../../constants/routes';
 
 const onAuthStateChangedChannel = eventChannel(emitter => {
   const handler = (payload) => {
+    console.log('handler', payload);
     if (payload) {
-      emitter(payload);
+      emitter(true);
+    } else {
+      emitter(false);
     }
   }
 
-  return firebase.auth.onAuthStateChanged(handler);
+  const unsubscribe = firebase.auth.onAuthStateChanged(handler);
+
+  return unsubscribe;
 });
 
 function* onAuthStateChangedWorker(user) {
-  console.log(!!user);
-  yield put({ type: 'AUTH_USER_SET', exist: !!user });
+  console.log(user);
+  yield put({ type: 'AUTH_USER_SET', exist: user });
 
   if (user) {
     yield put(push(routes.HOME));
