@@ -7,7 +7,6 @@ import * as routes from '../../constants/routes';
 
 const onAuthStateChangedChannel = eventChannel(emitter => {
   const handler = (payload) => {
-    console.log('handler', payload);
     if (payload) {
       emitter(true);
     } else {
@@ -15,9 +14,7 @@ const onAuthStateChangedChannel = eventChannel(emitter => {
     }
   }
 
-  const unsubscribe = firebase.auth.onAuthStateChanged(handler);
-
-  return unsubscribe;
+  return firebase.auth.onAuthStateChanged(handler);
 });
 
 function* onAuthStateChangedWorker(user) {
