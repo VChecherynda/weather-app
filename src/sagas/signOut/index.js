@@ -1,13 +1,9 @@
-import { all, put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import { push } from 'react-router-redux'
 
 import { auth } from '../../libs/firebase';
 
 import { signOut } from '../../store/session/signOut/action';
-
-function* onAuthStateChangedWorker(user) {
-  yield put({ type: 'AUTH_USER_SET', exist: false });
-}
 
 function* signOutUserWorker() {
   try {
@@ -17,13 +13,9 @@ function* signOutUserWorker() {
 
   } catch (e) {
     yield put({type: "SIGN_OUT_FAILED"});
-
   }
 }
 
 export function* watchSignOut() {
-  yield all([
-    takeEvery(signOut, signOutUserWorker),
-    takeEvery(signOut, onAuthStateChangedWorker),
-  ]);
+  yield takeEvery(signOut, signOutUserWorker);
 }

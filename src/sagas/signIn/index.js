@@ -1,18 +1,8 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { push } from 'react-router-redux'
+import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { auth } from '../../libs/firebase';
-import * as routes from '../../constants/routes';
 
 import { submitForm } from '../../store/session/signIn/actions';
-
-function* onAuthStateChangedWorker(user) {
-  yield put({ type: 'AUTH_USER_SET', exist: true });
-
-  if (user) {
-    yield put(push(routes.HOME));
-  }
-}
 
 function* signInUserWorker({ payload }) {
   const { email, password } = payload;
@@ -26,8 +16,5 @@ function* signInUserWorker({ payload }) {
 }
 
 export function* watchSignIn() {
-  yield all([
-    takeEvery(submitForm, signInUserWorker),
-    takeEvery(submitForm, onAuthStateChangedWorker),
-  ])
+  yield takeEvery(submitForm, signInUserWorker);
 }
