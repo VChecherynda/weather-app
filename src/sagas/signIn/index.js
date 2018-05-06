@@ -10,7 +10,6 @@ function* onAuthStateChangedWorker(user) {
   yield put({ type: 'AUTH_USER_SET', exist: true });
 
   if (user) {
-    console.log('signed In');
     yield put(push(routes.HOME));
   }
 }
