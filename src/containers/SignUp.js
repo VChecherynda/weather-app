@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { submitSignUpForm } from '../store/signUp/actions';
+import { submitSignUpForm } from '../store/session/signUp/actions';
 
 import SignUp from '../views/SignUp/SignUpForm';
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { submitForm } from '../store/passwordForget/actions';
+import { submitForm } from '../store/session/passwordForget/actions';
 
 import PasswordForget from '../views/PasswordForget/PasswordForgetForm';
 

@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { auth } from '../../libs/firebase';
 
-import { submitForm } from '../../store/passwordForget/actions';
+import { submitForm } from '../../store/session/passwordForget/actions';
 
 function* PasswordForgetWorker({ payload }) {
   const { email } = payload;

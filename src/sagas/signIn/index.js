@@ -4,7 +4,7 @@ import { push } from 'react-router-redux'
 import { auth } from '../../libs/firebase';
 import * as routes from '../../constants/routes';
 
-import { submitForm } from '../../store/signIn/actions';
+import { submitForm } from '../../store/session/signIn/actions';
 
 function* onAuthStateChangedWorker(user) {
   yield put({ type: 'AUTH_USER_SET', exist: true });

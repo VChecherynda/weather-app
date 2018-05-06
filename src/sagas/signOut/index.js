@@ -3,7 +3,7 @@ import { push } from 'react-router-redux'
 
 import { auth } from '../../libs/firebase';
 
-import { signOut } from '../../store/signOut/action';
+import { signOut } from '../../store/session/signOut/action';
 
 function* onAuthStateChangedWorker(user) {
   yield put({ type: 'AUTH_USER_SET', exist: false });
