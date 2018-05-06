@@ -16,7 +16,6 @@ class SignUpForm extends Component {
 
   onSubmit = (event) => {
     const {
-      username,
       email,
       passwordOne,
     } = this.state;
@@ -38,8 +37,8 @@ class SignUpForm extends Component {
 
     const isInvalid =
       passwordOne !== passwordTwo ||
-      passwordOne == '' ||
-      email == '' ||
+      passwordOne === '' ||
+      email === '' ||
       username === '';
 
     return (

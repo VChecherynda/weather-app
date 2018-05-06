@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { push } from 'react-router-redux'
 
-import { auth } from '../../assets/libs/firebase';
+import { auth } from '../../libs/firebase';
 import * as routes from '../../constants/routes';
 
 import { submitForm } from '../../store/passwordChange/actions';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PasswordForgetForm from '../../containers/PasswordForget'
 // import { auth } from '../../assets/libs/firebase'

@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-
-import { auth } from '../../../assets/libs/firebase'
-import * as routes from '../../../constants/routes';
 
 const INITIAL_STATE = {
   email: '',
@@ -17,7 +13,6 @@ class SignInForm extends Component {
   }
 
   onSubmit = (event) => {
-    console.log(this.state);
     const { email, password } = this.state;
     const { submitForm } = this.props;
 
@@ -30,7 +25,7 @@ class SignInForm extends Component {
   }
 
   render() {
-    const { email, password, error } = this.state;
+    const { email, password } = this.state;
 
     const isInvalid = password === '' || email === '';
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { listOfCities } from '../../store/api/dataCities';
 import SignOut from '../../containers/SignOut';
 

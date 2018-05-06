@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Redirect,
   Route
@@ -7,7 +7,6 @@ import {
 import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log(rest);
   return (
     <Route {...rest} render={ props => {
       return(

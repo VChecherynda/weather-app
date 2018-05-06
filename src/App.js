@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Route } from 'react-router-dom';
-
-import store from './index.js';
 
 import * as routes from './constants/routes';
 
@@ -13,7 +11,7 @@ import PasswordForgetPage from './views/PasswordForget';
 
 import PrivateRoute from './containers/PrivateRoute';
 
-const App = (props) => {
+const App = () => {
   return (
     <div>
       <Route

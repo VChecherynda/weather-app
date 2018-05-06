@@ -1,8 +1,7 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { all, put, takeEvery } from 'redux-saga/effects';
 import { push } from 'react-router-redux'
 
-import { auth } from '../../assets/libs/firebase';
-import * as routes from '../../constants/routes';
+import { auth } from '../../libs/firebase';
 
 import { signOut } from '../../store/signOut/action';
 
@@ -23,8 +22,8 @@ function* signOutUserWorker() {
 }
 
 export function* watchSignOut() {
-  yield [
+  yield all([
     takeEvery(signOut, signOutUserWorker),
-    takeEvery(signOut, signOutUserWorker),
-  ]
+    takeEvery(signOut, onAuthStateChangedWorker),
+  ]);
 }

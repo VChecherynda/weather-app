@@ -1,7 +1,7 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { all, call, put, takeEvery } from 'redux-saga/effects';
 import { push } from 'react-router-redux'
 
-import { auth } from '../../assets/libs/firebase';
+import { auth } from '../../libs/firebase';
 import * as routes from '../../constants/routes';
 
 import { submitSignUpForm } from '../../store/signUp/actions';
@@ -29,8 +29,8 @@ function* signUpUserWorker({ payload }) {
 }
 
 export function* watchSignUp() {
-  yield [
+  yield all([
     takeEvery(submitSignUpForm, signUpUserWorker),
     takeEvery(submitSignUpForm, onAuthStateChangedWorker),
-  ]
+  ]);
 }
